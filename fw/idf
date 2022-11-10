@@ -1,0 +1,5 @@
+#!/bin/bash
+
+podman container runlabel run burgrp/esp-idf:v5.0-beta1 idf $@
+
+
