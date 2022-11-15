@@ -7,5 +7,10 @@
     },
     "cSpell.words": [
         "LOGI"
+    ],
+    "idf.adapterTargetName": "esp32c3",
+    "idf.port": "/dev/ttyACM0",
+    "idf.openOcdConfigs": [
+        "board/esp32c3-builtin.cfg"
     ]
 }

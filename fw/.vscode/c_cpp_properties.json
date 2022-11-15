@@ -8,7 +8,7 @@
                 "/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/riscv32-esp-elf/include"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/esp/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin/riscv32-esp-elf-gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "linux-gcc-x64",
