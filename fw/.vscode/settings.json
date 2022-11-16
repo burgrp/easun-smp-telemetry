@@ -1,16 +1,3 @@
 {
-    "files.associations": {
-        "gpio.h": "c",
-        "task.h": "c",
-        "freertos.h": "c",
-        "freertosconfig.h": "c"
-    },
-    "cSpell.words": [
-        "LOGI"
-    ],
-    "idf.adapterTargetName": "esp32c3",
-    "idf.port": "/dev/ttyACM0",
-    "idf.openOcdConfigs": [
-        "board/esp32c3-builtin.cfg"
-    ]
+    "idf.adapterTargetName": "esp32c3"
 }
