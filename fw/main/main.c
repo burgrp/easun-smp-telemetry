@@ -7,87 +7,33 @@
 #include "esp_system.h"
 #include "esp_wifi.h"
 
+#include "lwip/api.h"
+#include "lwip/arch.h"
 #include "lwip/err.h"
-#include "lwip/sockets.h"
+#include "lwip/ip_addr.h"
+#include "lwip/netbuf.h"
+#include "lwip/opt.h"
 #include "lwip/sys.h"
-#include <lwip/netdb.h>
 
 static const char *TAG = "application";
 
 #define PORT 8361
 
 static void registersTask(void *pvParameters) {
-  char rx_buffer[128];
-  char addr_str[128];
-  int ip_protocol = 0;
-  
-  while (1) {
 
-    struct sockaddr_in dest_addr_ip;
-    dest_addr_ip.sin_addr.s_addr = htonl(INADDR_ANY);
-    dest_addr_ip.sin_family = AF_INET;
-    dest_addr_ip.sin_port = htons(PORT);
-    ip_protocol = IPPROTO_IP;
+  struct netbuf *buff;
 
-    int sock = socket(AF_INET, SOCK_DGRAM, ip_protocol);
-    if (sock < 0) {
-      ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
-      break;
-    }
-    ESP_LOGI(TAG, "Socket created");
+  struct netconn *nc = netconn_new(NETCONN_UDP);
 
-    // Set timeout
-    struct timeval timeout;
-    timeout.tv_sec = 10;
-    timeout.tv_usec = 0;
-    setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof timeout);
+  netconn_bind(nc, IP4_ADDR_ANY, PORT);
 
-    int err = bind(sock, (struct sockaddr *)&dest_addr_ip, sizeof(dest_addr_ip));
-    if (err < 0) {
-      ESP_LOGE(TAG, "Socket unable to bind: errno %d", errno);
-    }
-    ESP_LOGI(TAG, "Socket bound, port %d", PORT);
-
-    struct sockaddr_storage source_addr; // Large enough for both IPv4 or IPv6
-    socklen_t socklen = sizeof(source_addr);
-
-    while (1) {
-      ESP_LOGI(TAG, "Waiting for data");
-      int len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0,
-                         (struct sockaddr *)&source_addr, &socklen);
-      // Error occurred during receiving
-      if (len < 0) {
-        ESP_LOGE(TAG, "recvfrom failed: errno %d", errno);
-        break;
-      }
-      // Data received
-      else {
-        // Get the sender's ip address as string
-        if (source_addr.ss_family == PF_INET) {
-          inet_ntoa_r(((struct sockaddr_in *)&source_addr)->sin_addr, addr_str,
-                      sizeof(addr_str) - 1);
-        } 
-
-        rx_buffer[len] =
-            0; // Null-terminate whatever we received and treat like a string...
-        ESP_LOGI(TAG, "Received %d bytes from %s:", len, addr_str);
-        ESP_LOGI(TAG, "%s", rx_buffer);
-
-        int err = sendto(sock, rx_buffer, len, 0,
-                         (struct sockaddr *)&source_addr, sizeof(source_addr));
-        if (err < 0) {
-          ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
-          break;
-        }
-      }
-    }
-
-    if (sock != -1) {
-      ESP_LOGE(TAG, "Shutting down socket and restarting...");
-      shutdown(sock, 0);
-      close(sock);
-    }
+  for (;;) {
+    netconn_recv(nc, &buff);
+    ESP_LOGI(TAG, "RCV %d %d", buff->p->len, buff->p->tot_len);
+    netconn_send(nc, buff);
+    netbuf_delete(buff);
   }
+
   vTaskDelete(NULL);
 }
 
