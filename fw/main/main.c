@@ -98,10 +98,3 @@ void app_main(void) {
 
   vTaskDelete(NULL);
 }
-
-//#include "sdkconfig.h"
-// #include "driver/gpio.h"
-// const gpio_num_t LED_GPIO = gpio_num_t(CONFIG_LED_GPIO);
-//     gpio_reset_pin(LED_GPIO);
-//     gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
-//     gpio_set_level(LED_GPIO, 1);
