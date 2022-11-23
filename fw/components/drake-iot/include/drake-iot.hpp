@@ -3,12 +3,15 @@
 
 #include <string>
 #include <stdexcept>
+#include "esp_log.h"
 
 using namespace std;
 
 namespace drake::iot {
 
 #define TAG "drake-iot"
+
+void panic(exception *e);
 
 class WiFi {
 public:

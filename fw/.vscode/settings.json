@@ -10,6 +10,7 @@
         "netbuf.h": "c",
         "opt.h": "c",
         "drake-iot.hpp": "c",
-        "string": "cpp"
+        "string": "cpp",
+        "typeinfo": "cpp"
     }
 }

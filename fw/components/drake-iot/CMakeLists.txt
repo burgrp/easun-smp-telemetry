@@ -1,2 +1,2 @@
-idf_component_register(SRCS "wifi.cpp" "application.cpp"
+idf_component_register(SRCS "exception.cpp" "application.cpp" "wifi.cpp"
                     INCLUDE_DIRS "include")

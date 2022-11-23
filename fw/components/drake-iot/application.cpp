@@ -1,7 +1,8 @@
 #include "drake-iot.hpp"
-#include "esp_log.h"
 
-void drake::iot::Application::start() {
+namespace drake::iot {
+
+void Application::start() {
 
   try {
     ESP_LOGI(TAG, "Starting %s", name.c_str());
@@ -11,7 +12,8 @@ void drake::iot::Application::start() {
 #endif
 
   } catch (runtime_error *e) {
-    ESP_LOGE(TAG, "Unhandled exception: %s", e->what());
-    abort();
+    panic(e);
   }
+}
+
 }
