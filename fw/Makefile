@@ -5,13 +5,16 @@ IMAGE_NAME=ghcr.io/burgrp/esp-idf:v5.0-rc1
 CONTAINER_NAME=esp-idf
 
 start: ## Creates and starts devcontainer
-	podman run --detach -it --name ${CONTAINER_NAME} -v /home:/home -v /dev:/dev --workdir=${PWD} ${IMAGE_NAME}
+	podman run --restart=always --detach -it --name ${CONTAINER_NAME} -v /home:/home -v /dev:/dev --workdir=${PWD} ${IMAGE_NAME}
 
 stop: ## Stops and removes devcontainer
 	podman rm -f ${CONTAINER_NAME}
 
 code: ## Starts VS Code connected to the devcontainer
 	code --folder-uri vscode-remote://attached-container+$(shell echo -n '{"containerName":"${CONTAINER_NAME}"}'| hexdump -v -e '/1 "%02X"')${PWD}
+
+enter: ## Executes bash inside devcontainer
+	podman exec -ti ${CONTAINER_NAME} bash
 
 build: ## builds project using "idf build"
 	./idf build

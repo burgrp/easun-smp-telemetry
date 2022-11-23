@@ -1,0 +1,9 @@
+menu "Drake IoT"
+
+config DRAKE_IOT_HANDLE_WIFI
+    bool "Handle WiFi"
+    default y
+    help
+        Handles WiFi connectivity.
+
+endmenu

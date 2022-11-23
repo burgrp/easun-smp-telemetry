@@ -6,6 +6,10 @@
         "udp.h": "c",
         "api.h": "c",
         "err.h": "c",
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "netbuf.h": "c",
+        "opt.h": "c",
+        "drake-iot.hpp": "c",
+        "string": "cpp"
     }
 }
