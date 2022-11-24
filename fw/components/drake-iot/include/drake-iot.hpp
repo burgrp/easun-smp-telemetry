@@ -7,6 +7,7 @@
 
 #include <stdexcept>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -16,11 +17,11 @@ namespace drake::iot {
 
 class Application;
 
-#include "drake-iot-esp-error.hpp"
-#include "drake-iot-wifi.hpp"
-#include "drake-iot-nvs.hpp"
-#include "drake-iot-console.hpp"
-#include "drake-iot-application.hpp"
+#include "etc/esp-error.hpp"
+#include "etc/wifi.hpp"
+#include "etc/nvs.hpp"
+#include "etc/console.hpp"
+#include "etc/application.hpp"
 
 #endif
 

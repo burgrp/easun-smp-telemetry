@@ -15,5 +15,3 @@ public:
       throw new EspError(err_rc_);                                             \
     }                                                                          \
   } while (0)
-
-

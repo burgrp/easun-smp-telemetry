@@ -3,9 +3,6 @@
 
 class NVS {
 public:
-  Application *application;
-  NVS(Application *application) : application(application) {}
-
   void init() {
     ESP_LOGI(TAG, "Initializing NVS...");
 

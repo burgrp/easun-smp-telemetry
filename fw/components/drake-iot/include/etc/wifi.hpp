@@ -22,9 +22,6 @@ class WiFi {
   }
 
 public:
-  Application *application;
-  WiFi(Application *application) : application(application) {}
-
   void start() {
     ESP_LOGI(TAG, "Starting WiFi...");
 
@@ -37,7 +34,7 @@ public:
     ESP_THROW(esp_wifi_init(&initConfig));
 
     ESP_THROW(esp_wifi_set_mode(WIFI_MODE_STA));
-    
+
     esp_event_handler_instance_t instanceAnyId;
     ESP_THROW(esp_event_handler_instance_register(
         WIFI_EVENT, ESP_EVENT_ANY_ID, &wifiEventHandler, NULL, &instanceAnyId));
@@ -53,13 +50,13 @@ public:
 
   void setSsidPassword(const string &ssid, const string &password) {
     wifi_config_t staConfig = {};
-    
+
     staConfig.sta.ssid[ssid.copy((char *)staConfig.sta.ssid,
                                  sizeof(staConfig.sta.ssid))] = 0;
-    
+
     staConfig.sta.password[password.copy((char *)staConfig.sta.password,
                                          sizeof(staConfig.sta.password))] = 0;
-    
+
     ESP_LOGI(TAG, "Wifi SSID/password configured as: '%s', '%s'",
              staConfig.sta.ssid, staConfig.sta.password);
 
