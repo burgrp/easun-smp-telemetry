@@ -29,5 +29,6 @@
         "ostream": "cpp",
         "ratio": "cpp",
         "streambuf": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

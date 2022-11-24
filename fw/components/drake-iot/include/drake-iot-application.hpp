@@ -1,9 +1,15 @@
-#include "drake-iot.hpp"
-#include "esp_system.h"
+class Application {
+public:
+  NVS nvs;
+  Console console;
+#ifdef CONFIG_DRAKE_IOT_HANDLE_WIFI
+  WiFi wifi;
 
-namespace drake::iot {
+#endif
 
-void Application::start() {
+  Application(): nvs(this), console(this), wifi(this) {}
+  
+  void start() {
 
   try {
     ESP_LOGI(TAG, "Starting application...");
@@ -21,6 +27,7 @@ void Application::start() {
     ESP_LOGE(TAG, "Unhandled exception on application start: %s", msg);
     esp_system_abort(msg);
   }
+  
 }
 
-} // namespace drake::iot
+};
