@@ -11,6 +11,23 @@
         "opt.h": "c",
         "drake-iot.hpp": "c",
         "string": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "esp_cpu.h": "c",
+        "bitset": "cpp",
+        "exception": "cpp",
+        "future": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "functional": "cpp",
+        "regex": "cpp",
+        "*.tcc": "cpp",
+        "system_error": "cpp",
+        "random": "cpp",
+        "fstream": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "streambuf": "cpp"
     }
 }
