@@ -8,6 +8,8 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <array>
+#include <map>
 
 using namespace std;
 
@@ -21,6 +23,7 @@ class Application;
 #include "etc/wifi.hpp"
 #include "etc/nvs.hpp"
 #include "etc/console.hpp"
+#include "etc/cmd-wifi.hpp"
 #include "etc/application.hpp"
 
 #endif

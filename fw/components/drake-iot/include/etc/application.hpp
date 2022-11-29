@@ -2,10 +2,10 @@ class Application {
 public:
   NVS nvs;
   Console console;
-#ifdef CONFIG_DRAKE_IOT_HANDLE_WIFI
   WiFi wifi;
+  WiFiConnectCommand wifiCommand;
 
-#endif
+  Application() {}
 
   void start() {
 
@@ -13,12 +13,11 @@ public:
       ESP_LOGI(TAG, "Starting application...");
 
       nvs.init();
-
-#ifdef CONFIG_DRAKE_IOT_HANDLE_WIFI
-      wifi.start();
-#endif
-
       console.start();
+      wifi.start();
+
+      wifiCommand.attach(console);
+
       ESP_LOGI(TAG, "Application started.");
 
     } catch (exception *e) {

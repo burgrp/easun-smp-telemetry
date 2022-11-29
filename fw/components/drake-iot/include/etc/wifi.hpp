@@ -43,6 +43,7 @@ public:
     ESP_THROW(esp_event_handler_instance_register(
         IP_EVENT, ESP_EVENT_ANY_ID, &wifiEventHandler, NULL, &instanceGotIp));
 
+
     ESP_THROW(esp_wifi_start());
 
     ESP_LOGI(TAG, "WiFi started.");

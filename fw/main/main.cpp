@@ -2,11 +2,10 @@
 
 using namespace drake::iot;
 
+Application app;
+
 extern "C" {
 void app_main(void) {
-
-  Application app;
-
   app.start();
 }
 }
