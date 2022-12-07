@@ -3,9 +3,9 @@ public:
   NVS nvs;
   Console console;
   WiFi wifi;
-  WiFiConnectCommand wifiCommand;
+  WiFiCommand wifiCommand;
 
-  Application() {}
+  Application():wifiCommand(&wifi) {}
 
   void start() {
 

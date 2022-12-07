@@ -6,19 +6,23 @@ class Command;
 
 // TODO: composite key (console, command-name) to allow multiple consoles
 // ...which will never happen...
-static map<string, Command&> allCommands;
+static map<string, Command &> allCommands;
 
 static int cmdHandler(int argc, char **argv);
 
 class Command {
-public:
   string name;
   string help;
   string hint;
 
-  Command(string name, string help, string hint): name(name), help(help), hint(hint)  {  }  
+public:
+  Command() {}
 
-  void attach(Console& console) {
+  void attach(Console &console) {
+    name = getName();
+    help = getHelp();
+    hint = getHint();
+
     allCommands.insert_or_assign(name, *this);
 
     esp_console_cmd_t cmd = {.command = name.c_str(),
@@ -30,15 +34,76 @@ public:
     ESP_THROW(esp_console_cmd_register(&cmd));
   };
 
+  virtual string &getName() = 0;
+  virtual string &getHelp() = 0;
+  virtual string &getHint() = 0;
   virtual int run(vector<string> &args) = 0;
+};
+
+class SimpleCommand : public Command {
+public:
+  string name;
+  string help;
+  string hint;
+  vector<Command *> commands;
+  SimpleCommand(string name, string help, string hint)
+      : Command(), name(name), help(help), hint(hint) {}
+
+  string &getName() { return name; };
+  string &getHelp() { return help; };
+  string &getHint() { return hint; };
 };
 
 class CompoundCommand : public Command {
 public:
+  string name;
+  string help;
+  string hint;
   vector<Command *> commands;
   CompoundCommand(string name, string help, vector<Command *> commands)
-      : Command(name, help, "hint123"), commands(commands) {}
-  int run(vector<string> &args) { return 0; };
+      : Command(), name(name), help(help), commands(commands) {}
+
+  string &getName() { return name; };
+
+  string &getHelp() { return help; };
+
+  string &getHint() {
+    if (hint.empty()) {
+      hint = "";
+      for (auto command : commands) {
+        if (!hint.empty()) {
+          hint = hint + "|";
+        }
+        hint = hint + command->getName();
+      }
+    }
+    return hint;
+  };
+
+  virtual void showHelp() {
+    //cout << "HELP";
+
+    
+  }
+
+  int run(vector<string> &args) {
+    if (args.empty()) {
+      showHelp();
+      return 0;
+    } else {
+      auto begin = args.begin();
+      string subcommand = *begin;
+      args.erase(begin);
+      for (auto command : commands) {
+        if (!command->getName().compare(subcommand)) {
+          return command->run(args);
+        }
+      }
+      //cout << "Unknown subcommand: " << subcommand;
+      showHelp();
+      return 1;
+    }
+  };
 };
 
 class Console {
@@ -71,7 +136,6 @@ int cmdHandler(int argc, char **argv) {
     for (int c = 1; c < argc; c++) {
       args.push_back(argv[c]);
     }
-    ESP_LOGI(TAG, "command %s", command.name.c_str());
     return command.run(args);
   } catch (exception *e) {
     ESP_LOGE(TAG, "Command %s failed: %s", argv[0], e->what());

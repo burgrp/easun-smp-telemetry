@@ -16,10 +16,10 @@ code: ## Starts VS Code connected to the devcontainer
 enter: ## Executes bash inside devcontainer
 	podman exec -ti ${CONTAINER_NAME} bash
 
-build: ## builds project using "idf build"
+build: ## Builds project using "idf build"
 	./idf build
 
-flash: ## flashes the target using "idf flash"
+flash: ## Flashes the target using "idf flash"
 	./idf flash
 
 help:
