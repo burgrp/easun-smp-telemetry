@@ -2,14 +2,10 @@
 #![no_main]
 #![feature(type_alias_impl_trait)]
 
-use embassy_executor::{Executor, _export::StaticCell};
 use embassy_time::{Duration, Timer};
 
 use esp32c3_hal::{
-    clock::ClockControl,
-    prelude::*,
-    timer::TimerGroup,
-    Rtc, embassy, pac::Peripherals,
+    clock::ClockControl, embassy, pac::Peripherals, prelude::*, timer::TimerGroup, Rtc,
 };
 use esp_backtrace as _;
 use esp_println::println;
@@ -31,10 +27,8 @@ async fn run2() {
     }
 }
 
-static EXECUTOR: StaticCell<Executor> = StaticCell::new();
-
-#[riscv_rt::entry]
-fn main() -> ! {
+#[embassy_executor::main]
+async fn main(spawner: embassy_executor::Spawner) -> ! {
     let peripherals = Peripherals::take().unwrap();
     let system = peripherals.SYSTEM.split();
     let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
@@ -52,9 +46,6 @@ fn main() -> ! {
 
     embassy::init(&clocks);
 
-    let executor = EXECUTOR.init(Executor::new());
-    executor.run(|spawner| {
-        // spawner.spawn(run1()).ok();
-        // spawner.spawn(run2()).ok();
-    });
+    spawner.spawn(run1()).ok();
+    spawner.spawn(run2()).ok();
 }
