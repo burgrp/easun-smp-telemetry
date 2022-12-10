@@ -2,6 +2,7 @@
 #![no_main]
 #![feature(type_alias_impl_trait)]
 
+use embassy_executor::{main, task, Spawner};
 use embassy_time::{Duration, Timer};
 
 use esp32c3_hal::{
@@ -9,9 +10,8 @@ use esp32c3_hal::{
 };
 use esp_backtrace as _;
 use esp_println::println;
-//use static_cell::StaticCell;
 
-#[embassy_executor::task]
+#[task]
 async fn run1() {
     loop {
         println!("Hello world from embassy using esp-hal-async!");
@@ -19,7 +19,7 @@ async fn run1() {
     }
 }
 
-#[embassy_executor::task]
+#[task]
 async fn run2() {
     loop {
         println!("Bing!");
@@ -27,8 +27,8 @@ async fn run2() {
     }
 }
 
-#[embassy_executor::main]
-async fn main(spawner: embassy_executor::Spawner) -> ! {
+#[main]
+async fn main(spawner: Spawner) -> ! {
     let peripherals = Peripherals::take().unwrap();
     let system = peripherals.SYSTEM.split();
     let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
