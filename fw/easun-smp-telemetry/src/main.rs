@@ -51,7 +51,8 @@ fn main() -> ! {
     wdt0.disable();
     wdt1.disable();
 
-    embassy::init(&clocks, esp32c3_hal::systimer::SystemTimer::new(peripherals.SYSTIMER));
+    //embassy::init(&clocks, esp32c3_hal::systimer::SystemTimer::new(peripherals.SYSTIMER));
+    embassy::init(&clocks);
 
     let executor = EXECUTOR.init(Executor::new());
     executor.run(|spawner| {
