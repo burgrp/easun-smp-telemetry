@@ -1,9 +1,0 @@
-[build]
-rustflags = [
-  "-C", "force-frame-pointers",
-  "-C", "link-arg=-Tlinkall.x",
-]
-target = "riscv32imc-unknown-none-elf"
-
-[unstable]
-build-std = ["core"]

@@ -1,0 +1,6 @@
+[submodule "fw/sub/micropython-virtual-timer"]
+	path = fw/sub/micropython-virtual-timer
+	url = git@github.com:burgrp/micropython-virtual-timer.git
+[submodule "fw/sub/micropython-esp-wifi"]
+	path = fw/sub/micropython-esp-wifi
+	url = git@github.com:burgrp/micropython-esp-wifi.git
