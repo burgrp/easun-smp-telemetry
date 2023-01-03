@@ -1,7 +1,8 @@
 import esp_wifi
-import wifi_config
+import config
 
 print('EASUN SMP Telemetry')
+print('Inverter index:', config.inverter_index)
 
-esp_wifi.init(ssid = wifi_config.ssid, password=wifi_config.password, ledPin = 4, ledLogic = True)
+esp_wifi.init(ssid = config.wifi_ssid, password=config.wifi_password, ledPin = 4, ledLogic = True)
 
