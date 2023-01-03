@@ -18,7 +18,7 @@ start:	## Starts build container
 	podman run -it --rm --name ${CONTAINER_NAME} --privileged -v ${PWD}:/project -v /dev:/dev -w /opt/mpy/ports/esp32 -e BOARD=GENERIC_C3_USB -e PORT=${PORT} ${BUILDER_IMAGE}
 
 vanilla: ## Builds and flashes vanilla MicroPython
-	podman exec -it ${CONTAINER_NAME} make clean deploy
+	podman exec -it ${CONTAINER_NAME} make FROZEN_MANIFEST=/project/manifest-dev.py clean deploy
 
 dev: ## Mount application directory, run main and repl
 	podman exec -it -w /project ${CONTAINER_NAME} mpremote mount -l app exec "import main" repl

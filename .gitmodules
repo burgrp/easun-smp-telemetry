@@ -4,3 +4,6 @@
 [submodule "fw/sub/micropython-esp-wifi"]
 	path = fw/sub/micropython-esp-wifi
 	url = git@github.com:burgrp/micropython-esp-wifi.git
+[submodule "fw/sub/micropython-mqtt"]
+	path = fw/sub/micropython-mqtt
+	url = https://github.com/peterhinch/micropython-mqtt.git
