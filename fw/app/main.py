@@ -1,5 +1,4 @@
 import sys
-
 sys.path.append('dep')
 
 import esp_wifi
