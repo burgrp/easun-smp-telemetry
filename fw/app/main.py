@@ -5,11 +5,6 @@ import site_config
 print('EASUN SMP Telemetry')
 print('Inverter index:', site_config.inverter_index)
 
-# import esp_wifi
-#
-#
-# esp_wifi.init(ssid = config.wifi_ssid, password=config.wifi_password, ledPin = 4, ledLogic = True)
-
 from mqtt_as import MQTTClient, config
 import uasyncio as asyncio
 
