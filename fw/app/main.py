@@ -34,6 +34,7 @@ server = mqtt_call.Server(
     wifi_ssid=site_config.wifi_ssid,
     wifi_password=site_config.wifi_password,
     mqtt_broker=site_config.mqtt_broker,
+    ledPin=4,
     debug=True
 )
 
