@@ -7,3 +7,6 @@
 [submodule "fw/sub/micropython-mqtt"]
 	path = fw/sub/micropython-mqtt
 	url = https://github.com/peterhinch/micropython-mqtt.git
+[submodule "fw/sub/micropython-mqtt-call"]
+	path = fw/sub/micropython-mqtt-call
+	url = git@github.com:burgrp/micropython-mqtt-call.git
