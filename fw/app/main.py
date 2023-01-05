@@ -1,6 +1,9 @@
 import mqtt_call
-import site_config
 from machine import UART
+
+import sys
+sys.path.append('/')
+import site_config
 
 print('EASUN SMP Telemetry')
 print('Inverter index:', site_config.inverter_index)
@@ -27,6 +30,12 @@ class Handler:
 
         return (line or "").strip()
 
+    def export_get_status(self):
+        return {
+            "rssi": server.mqtt_client._sta_if.status('rssi'),
+            "ip": server.mqtt_client._sta_if.ifconfig()[0]
+        }
+
 
 server = mqtt_call.Server(
     handler=Handler(),
@@ -35,7 +44,7 @@ server = mqtt_call.Server(
     wifi_password=site_config.wifi_password,
     mqtt_broker=site_config.mqtt_broker,
     ledPin=4,
-    debug=True
+    debug=site_config.debug
 )
 
 server.dump()
