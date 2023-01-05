@@ -25,3 +25,6 @@ dev: ## Mount application directory, run main and repl
 
 freeze: ## Builds and flashes frozen application
 	podman exec -it ${CONTAINER_NAME} make FROZEN_MANIFEST=/project/manifest.py clean deploy
+
+flash: ## Flashes last build (vanilla or freeze)
+	podman exec -it ${CONTAINER_NAME} make FROZEN_MANIFEST=/project/manifest.py deploy

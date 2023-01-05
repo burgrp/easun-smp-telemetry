@@ -5,10 +5,13 @@ import sys
 sys.path.append('/')
 import site_config
 
+from crc_half import crc_half
+
+
 print('EASUN SMP Telemetry')
 print('Inverter index:', site_config.inverter_index)
 
-END_OF_LINE = '\n'
+CR = 0x0D
 
 class Handler:
 
@@ -18,17 +21,34 @@ class Handler:
         self.uart = UART(1, baudrate=2400, tx=21, rx=20, timeout=5000, timeout_char=5000)
 
 
-    def export_message(self, text):
+    def export_message(self, request):
+
         while self.uart.any() > 1:
             self.uart.read(1)
 
-        self.uart.write(text + END_OF_LINE)
+        requestData = bytearray(request)
+        crcHigh, crcLow = crc_half(requestData)
+        requestData.append(crcHigh)
+        requestData.append(crcLow)
+        requestData.append(CR)
 
-        line = self.uart.readline();
-        if line != None:
-            line = line.decode()
+        self.uart.write(requestData)
 
-        return (line or "").strip()
+        line = bytearray()
+
+        while True:
+            char = self.uart.read(1);
+
+            if char == None:
+                break
+
+            char = char[0]
+            if char == CR:
+                break
+
+            line.append(char)
+
+        return line[:-2].decode()
 
     def export_get_status(self):
         return {
