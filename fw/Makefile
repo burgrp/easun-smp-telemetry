@@ -21,6 +21,8 @@ vanilla: ## Builds and flashes vanilla MicroPython
 	podman exec -it ${CONTAINER_NAME} make FROZEN_MANIFEST=/project/manifest-dev.py clean deploy
 
 dev: ## Mount application directory, run main and repl
+	podman exec -it -w /project ${CONTAINER_NAME} mpremote reset
+	sleep 1
 	podman exec -it -w /project ${CONTAINER_NAME} mpremote mount -l app exec "import main" repl
 
 freeze: ## Builds and flashes frozen application
