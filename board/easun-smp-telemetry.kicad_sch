@@ -1,15 +1,15 @@
-(kicad_sch (version 20221004) (generator eeschema)
+(kicad_sch (version 20230409) (generator eeschema)
 
   (uuid 32f9e9f8-9d15-4d51-acc1-705de5fd2b71)
 
   (paper "A4")
 
   (lib_symbols
-    (symbol "Connector:Conn_01x03_Female" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (symbol "Connector:Conn_01x03_Socket" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 0 5.08 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "Conn_01x03_Female" (at 0 -5.08 0)
+      (property "Value" "Conn_01x03_Socket" (at 0 -5.08 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -18,17 +18,20 @@
       (property "Datasheet" "~" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
       (property "ki_keywords" "connector" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+      (property "ki_description" "Generic connector, single row, 01x03, script generated" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "Conn_01x03_Female_1_1"
-        (arc (start 0 -2.032) (mid -0.508 -2.54) (end 0 -3.048)
+      (symbol "Conn_01x03_Socket_1_1"
+        (arc (start 0 -2.032) (mid -0.5058 -2.54) (end 0 -3.048)
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
@@ -56,11 +59,11 @@
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (arc (start 0 0.508) (mid -0.508 0) (end 0 -0.508)
+        (arc (start 0 0.508) (mid -0.5058 0) (end 0 -0.508)
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (arc (start 0 3.048) (mid -0.508 2.54) (end 0 2.032)
+        (arc (start 0 3.048) (mid -0.5058 2.54) (end 0 2.032)
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
@@ -78,11 +81,11 @@
         )
       )
     )
-    (symbol "Connector:Conn_01x04_Male" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (symbol "Connector:Conn_01x04_Pin" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (at 0 5.08 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "Conn_01x04_Male" (at 0 -7.62 0)
+      (property "Value" "Conn_01x04_Pin" (at 0 -7.62 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -91,16 +94,19 @@
       (property "Datasheet" "~" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
       (property "ki_keywords" "connector" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+      (property "ki_description" "Generic connector, single row, 01x04, script generated" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "Conn_01x04_Male_1_1"
+      (symbol "Conn_01x04_Pin_1_1"
         (polyline
           (pts
             (xy 1.27 -5.08)
@@ -672,14 +678,14 @@
         )
       )
     )
-    (symbol "Regulator_Linear:LM1117-3.3" (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
+    (symbol "Regulator_Linear:LM1117MP-3.3" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at -3.81 3.175 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "LM1117-3.3" (at 0 3.175 0)
+      (property "Value" "LM1117MP-3.3" (at 0 3.175 0)
         (effects (font (size 1.27 1.27)) (justify left))
       )
-      (property "Footprint" "" (at 0 0 0)
+      (property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm1117.pdf" (at 0 0 0)
@@ -688,19 +694,19 @@
       (property "ki_keywords" "linear regulator ldo fixed positive" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "800mA Low-Dropout Linear Regulator, 3.3V fixed output, TO-220/TO-252/TO-263/SOT-223" (at 0 0 0)
+      (property "ki_description" "800mA Low-Dropout Linear Regulator, 3.3V fixed output, SOT-223" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_fp_filters" "SOT?223* TO?263* TO?252* TO?220*" (at 0 0 0)
+      (property "ki_fp_filters" "SOT?223*" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "LM1117-3.3_0_1"
+      (symbol "LM1117MP-3.3_0_1"
         (rectangle (start -5.08 -5.08) (end 5.08 1.905)
           (stroke (width 0.254) (type default))
           (fill (type background))
         )
       )
-      (symbol "LM1117-3.3_1_1"
+      (symbol "LM1117MP-3.3_1_1"
         (pin power_in line (at 0 -7.62 90) (length 2.54)
           (name "GND" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
@@ -728,7 +734,7 @@
       (property "Datasheet" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_keywords" "power-flag" (at 0 0 0)
+      (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_description" "Power symbol creates a global label with name \"+3V3\"" (at 0 0 0)
@@ -780,7 +786,7 @@
       (property "Datasheet" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_keywords" "power-flag" (at 0 0 0)
+      (property "ki_keywords" "global power" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (at 0 0 0)
@@ -809,12 +815,14 @@
     )
   )
 
-
   (junction (at 77.47 55.88) (diameter 0) (color 0 0 0 0)
     (uuid 2a152dbc-aee0-498d-bdf1-9a04f5287fcb)
   )
   (junction (at 50.8 55.88) (diameter 0) (color 0 0 0 0)
     (uuid 6be0a388-ef05-4be8-9351-a005b1de64bb)
+  )
+  (junction (at 120.65 38.1) (diameter 0) (color 0 0 0 0)
+    (uuid 70e0f041-547b-4944-8eb2-dc482e975f0b)
   )
   (junction (at 77.47 67.31) (diameter 0) (color 0 0 0 0)
     (uuid 8298a766-0ac6-42a4-aaa1-9032a24b30f0)
@@ -891,9 +899,17 @@
     (stroke (width 0) (type default))
     (uuid 48f5d4a8-48d4-4e5d-abb5-f2657131e9f8)
   )
+  (wire (pts (xy 120.65 38.1) (xy 125.73 38.1))
+    (stroke (width 0) (type default))
+    (uuid 5abcec1a-636f-475e-8e6b-d04a91f4ece0)
+  )
   (wire (pts (xy 95.25 105.41) (xy 99.06 105.41))
     (stroke (width 0) (type default))
     (uuid 6798ecb4-e501-432a-9231-6284232117f1)
+  )
+  (wire (pts (xy 120.65 36.83) (xy 120.65 38.1))
+    (stroke (width 0) (type default))
+    (uuid 691ce4f3-2eb5-4a58-8b5d-5421781ccbb9)
   )
   (wire (pts (xy 77.47 67.31) (xy 64.77 67.31))
     (stroke (width 0) (type default))
@@ -1033,7 +1049,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C4") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -1059,7 +1075,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C2") (unit 1) (value "47u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -1085,7 +1101,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C1") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -1111,7 +1127,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C3") (unit 1) (value "47u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -1126,7 +1142,7 @@
     (property "Value" "MAX3232 (SP3232E)" (at 97.2059 111.9601 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Package_SO:SO-16_3.9x9.9mm_P1.27mm" (at 96.52 165.1 0)
+    (property "Footprint" "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" (at 96.52 165.1 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "Datasheet" "https://datasheets.maximintegrated.com/en/ds/MAX3222-MAX3241.pdf" (at 95.25 135.89 0)
@@ -1151,7 +1167,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "U3") (unit 1) (value "MAX3232 (SP3232E)") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+          (reference "U3") (unit 1)
         )
       )
     )
@@ -1176,32 +1192,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR0106") (unit 1) (value "GND") (footprint "")
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:+3V3") (at 125.73 38.1 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 1cc96210-caa0-4e51-8fa7-d35c72548da7)
-    (property "Reference" "#PWR01" (at 129.54 38.1 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+3V3" (at 122.555 38.3866 90)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (at 125.73 38.1 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 125.73 38.1 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid fc3e691a-27ef-43ad-b296-b7f1f532cac5))
-    (instances
-      (project "easun-smp-telemetry"
-        (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR01") (unit 1) (value "+3V3") (footprint "")
+          (reference "#PWR0106") (unit 1)
         )
       )
     )
@@ -1227,7 +1218,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "D1") (unit 1) (value "LED") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+          (reference "D1") (unit 1)
         )
       )
     )
@@ -1252,7 +1243,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR0101") (unit 1) (value "+3V3") (footprint "")
+          (reference "#PWR0101") (unit 1)
         )
       )
     )
@@ -1277,13 +1268,13 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR05") (unit 1) (value "GND") (footprint "")
+          (reference "#PWR05") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Regulator_Linear:LM1117-3.3") (at 64.77 55.88 0) (unit 1)
+  (symbol (lib_id "Regulator_Linear:LM1117MP-3.3") (at 64.77 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2f520f37-b9d0-479a-812a-829d42a34e30)
     (property "Reference" "U1" (at 64.77 51.1429 0)
@@ -1304,7 +1295,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "U1") (unit 1) (value "LM1117-3.3") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+          (reference "U1") (unit 1)
         )
       )
     )
@@ -1330,13 +1321,13 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "R1") (unit 1) (value "270R") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+          (reference "R1") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x03_Female") (at 232.41 77.47 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x03_Socket") (at 232.41 77.47 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4228bc4d-f17f-4b05-bc38-3b5c00f55fc2)
     (property "Reference" "J2" (at 233.1212 76.8755 0)
@@ -1357,7 +1348,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "J2") (unit 1) (value "PROG") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+          (reference "J2") (unit 1)
         )
       )
     )
@@ -1400,7 +1391,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "U2") (unit 1) (value "ESP32-C3-WROOM-02") (footprint "Espressif:ESP32-C3-WROOM-02")
+          (reference "U2") (unit 1)
         )
       )
     )
@@ -1425,7 +1416,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR04") (unit 1) (value "+3V3") (footprint "")
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -1450,7 +1441,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR03") (unit 1) (value "GND") (footprint "")
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -1475,7 +1466,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+          (reference "#PWR0102") (unit 1)
         )
       )
     )
@@ -1501,7 +1492,78 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C5") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C5") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:C") (at 116.84 38.1 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 70de389f-1271-4556-91d1-ea4a0e97334d)
+    (property "Reference" "C14" (at 114.3 31.75 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "1u" (at 114.3 34.29 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (at 113.03 39.0652 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 116.84 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid f22792aa-ae62-4d96-8c30-d8c5cce33e3b))
+    (pin "2" (uuid cdbe7d26-f84e-4b07-a00a-915ce7cbce0d))
+    (instances
+      (project "cpu"
+        (path "/311bb903-b598-4d0a-b7e9-7724eb082834"
+          (reference "C14") (unit 1)
+        )
+      )
+      (project "easun-smp-telemetry"
+        (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
+          (reference "C9") (unit 1)
+        )
+      )
+      (project "nanook-as"
+        (path "/bd0055da-0838-4c4c-b506-87ee1119a3e6"
+          (reference "C2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3V3") (at 120.65 29.21 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 8d71fc8c-9e9e-4f1d-80b5-0ee7e3c2c2b7)
+    (property "Reference" "#PWR055" (at 120.65 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3V3" (at 120.65 22.86 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 120.65 29.21 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 120.65 29.21 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid a65691c5-c028-4878-868d-ddba01ff8c75))
+    (instances
+      (project "cpu"
+        (path "/311bb903-b598-4d0a-b7e9-7724eb082834"
+          (reference "#PWR055") (unit 1)
+        )
+      )
+      (project "easun-smp-telemetry"
+        (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
+          (reference "#PWR07") (unit 1)
+        )
+      )
+      (project "nanook-as"
+        (path "/bd0055da-0838-4c4c-b506-87ee1119a3e6"
+          (reference "#PWR0106") (unit 1)
         )
       )
     )
@@ -1527,7 +1589,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C7") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -1552,7 +1614,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR0105") (unit 1) (value "GND") (footprint "")
+          (reference "#PWR0105") (unit 1)
         )
       )
     )
@@ -1578,13 +1640,13 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C6") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C6") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x04_Male") (at 232.41 58.42 0) (mirror y) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x04_Pin") (at 232.41 58.42 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid aba4b090-8e48-4e3b-936a-29008a064877)
     (property "Reference" "J1" (at 233.1212 60.2845 0)
@@ -1606,7 +1668,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "J1") (unit 1) (value "INVERTER") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+          (reference "J1") (unit 1)
         )
       )
     )
@@ -1632,7 +1694,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "C8") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+          (reference "C8") (unit 1)
         )
       )
     )
@@ -1657,7 +1719,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR0104") (unit 1) (value "GND") (footprint "")
+          (reference "#PWR0104") (unit 1)
         )
       )
     )
@@ -1682,7 +1744,7 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR02") (unit 1) (value "+3V3") (footprint "")
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -1707,13 +1769,90 @@
     (instances
       (project "easun-smp-telemetry"
         (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
-          (reference "#PWR0103") (unit 1) (value "GND") (footprint "")
+          (reference "#PWR0103") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 113.03 38.1 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid e81eef65-cb34-4741-b5b9-aea3b74ea6ff)
+    (property "Reference" "#PWR047" (at 106.68 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 111.76 35.56 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 113.03 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 113.03 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid fe99af83-1f6d-4d5a-a6c8-a04cbcf87408))
+    (instances
+      (project "cpu"
+        (path "/311bb903-b598-4d0a-b7e9-7724eb082834"
+          (reference "#PWR047") (unit 1)
+        )
+      )
+      (project "easun-smp-telemetry"
+        (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
+          (reference "#PWR06") (unit 1)
+        )
+      )
+      (project "nanook-as"
+        (path "/bd0055da-0838-4c4c-b506-87ee1119a3e6"
+          (reference "#PWR0107") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 120.65 33.02 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid f9cb68b7-0f38-4a46-8244-003239ce59be)
+    (property "Reference" "R18" (at 123.19 30.48 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "10k" (at 123.19 35.56 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 118.872 33.02 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 120.65 33.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid e4f5fab4-a15e-4eaa-8169-31535fb952ad))
+    (pin "2" (uuid f39cf464-3a4b-41fd-afc3-ad4f42166ab0))
+    (instances
+      (project "cpu"
+        (path "/311bb903-b598-4d0a-b7e9-7724eb082834"
+          (reference "R18") (unit 1)
+        )
+      )
+      (project "easun-smp-telemetry"
+        (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "nanook-as"
+        (path "/bd0055da-0838-4c4c-b506-87ee1119a3e6/00000000-0000-0000-0000-00005c22e635"
+          (reference "R2") (unit 1)
+        )
+        (path "/bd0055da-0838-4c4c-b506-87ee1119a3e6/00000000-0000-0000-0000-00005c22f26b"
+          (reference "R4") (unit 1)
+        )
+        (path "/bd0055da-0838-4c4c-b506-87ee1119a3e6"
+          (reference "R1") (unit 1)
         )
       )
     )
   )
 
   (sheet_instances
-    (path "/32f9e9f8-9d15-4d51-acc1-705de5fd2b71" (page "1"))
+    (path "/" (page "1"))
   )
 )
