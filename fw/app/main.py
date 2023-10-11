@@ -1,15 +1,14 @@
 import mqtt_call
 from machine import UART
+from crc_half import crc_half
 
 import sys
 sys.path.append('/')
 import site_config
-
-from crc_half import crc_half
-
+import device_config
 
 print('EASUN SMP Telemetry')
-print('Inverter index:', site_config.inverter_index)
+print('Inverter index:', device_config.inverter_index)
 
 CR = 0x0D
 
@@ -26,7 +25,7 @@ class Handler:
         while self.uart.any() > 1:
             self.uart.read(1)
 
-        requestData = bytearray(request)
+        requestData = bytearray(request, "utf-8")
         crcHigh, crcLow = crc_half(requestData)
         requestData.append(crcHigh)
         requestData.append(crcLow)
@@ -59,12 +58,12 @@ class Handler:
 
 server = mqtt_call.Server(
     handler=Handler(),
-    name="solar-inverter-{}".format(site_config.inverter_index),
+    name="solar-inverter-{}".format(device_config.inverter_index),
     wifi_ssid=site_config.wifi_ssid,
     wifi_password=site_config.wifi_password,
     mqtt_broker=site_config.mqtt_broker,
     ledPin=4,
-    debug=site_config.debug
+    debug=device_config.debug
 )
 
 server.dump()
