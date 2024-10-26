@@ -10,3 +10,6 @@
 [submodule "fw/sub/micropython-mqtt-call"]
 	path = fw/sub/micropython-mqtt-call
 	url = git@github.com:burgrp/micropython-mqtt-call.git
+[submodule "sub/kicad-libraries"]
+	path = sub/kicad-libraries
+	url = https://github.com/espressif/kicad-libraries.git
